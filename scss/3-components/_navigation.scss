@@ -1,0 +1,92 @@
+.navbar {
+    display: grid;
+
+    &--toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.menu {
+    /*
+        Places 'primary menu' on right side of screen
+        below the hamburger icon. 
+    */
+    position: relative;
+    top: 1.5rem;
+
+    max-width: 20.25rem;
+    width: 100%;
+
+    text-align: center;
+    justify-self: end;
+
+
+    background: white;
+    border-radius: 5px;
+}
+
+.submenu {
+    background: var(--grayishBlue);
+
+    display: block;
+    margin: 0 1.5rem;
+}
+
+.item {
+    a {
+        display: block;
+        padding: 0.75rem;
+
+        &::after {
+            content: '';
+            width: 8px;
+            height: 4px;
+        }
+    }
+}
+
+// Primary menu -- END
+
+// Register buttons 
+.register {
+    border-top: 1px solid rgba(151, 151, 151, 1);
+}
+
+
+
+@media (min-width: 50em) {
+
+    // Menu -- Desktop and up
+    .menu,
+    .register {
+        all: unset;
+
+        display: flex;
+    }
+    
+    .logo {
+        margin-right: 4rem;
+    }
+
+    .menu:nth-child(2) {
+        margin-right: auto;
+    }
+
+    // Hide Hamburger Icon
+    .toggle {
+        display: none;
+    }
+
+    .navbar,
+    .register {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .submenu {
+        display: none;
+    }
+}

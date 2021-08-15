@@ -1,0 +1,178 @@
+:root {
+  --lightRed: hsl(356, 100%, 66%);
+  --veryLightRed: hsl(355, 100%, 74%);
+  --veryDarkBlue: hsl(208, 49%, 24%);
+  --white: hsl(0, 0, 100%);
+  --grayishBlue: hsl(240, 2%, 79%);
+  --veryDarkGreyBlue: hsl(207, 13%, 34%);
+  --darkBlackBlue: hsl(240, 10%, 16%);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[class],
+ol[class] {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.3;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  display: grid;
+  justify-content: center;
+}
+
+header {
+  width: 100vw;
+  border: 1px solid blue;
+  padding: 3.5rem 1.5rem 0;
+  background: linear-gradient(to bottom, #ff8f71, #ff3e55);
+}
+
+.navbar {
+  display: grid;
+}
+.navbar--toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  /*
+      Places 'primary menu' on right side of screen
+      below the hamburger icon. 
+  */
+  position: relative;
+  top: 1.5rem;
+  max-width: 20.25rem;
+  width: 100%;
+  text-align: center;
+  justify-self: end;
+  background: white;
+  border-radius: 5px;
+}
+
+.submenu {
+  background: var(--grayishBlue);
+  display: block;
+  margin: 0 1.5rem;
+}
+
+.item a {
+  display: block;
+  padding: 0.75rem;
+}
+.item a::after {
+  content: "";
+  width: 8px;
+  height: 4px;
+}
+
+.register {
+  border-top: 1px solid #979797;
+}
+
+@media (min-width: 50em) {
+  .menu,
+.register {
+    all: unset;
+    display: flex;
+  }
+
+  .logo {
+    margin-right: 4rem;
+  }
+
+  .menu:nth-child(2) {
+    margin-right: auto;
+  }
+
+  .toggle {
+    display: none;
+  }
+
+  .navbar,
+.register {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .submenu {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
