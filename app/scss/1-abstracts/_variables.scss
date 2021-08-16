@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
+:root {
+    // Primary Colors
+    --lightRed: hsl(356, 100%, 66%); // CTA text
+    --veryLightRed: hsl(355, 100%, 74%); // CTA hover background
+    --veryDarkBlue: #1f3e5a; // headings
+
+
+    // Neutral Colors
+    --white: hsl(0, 0, 100%);
+    --grayishBlue: hsl(240, 2%, 79%); // footer text
+    --veryDarkGreyBlue: hsl(206, 13%, 34%); // body copy
+    --darkBlackBlue: hsl(240, 10%, 16%); // footer background
+}
