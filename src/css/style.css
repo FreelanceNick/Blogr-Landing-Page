@@ -34,11 +34,10 @@ dd {
   margin: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[class],
-ol[class] {
-  margin: 0;
-  padding: 0;
+/* HOW DO I RESET 'margin' and 'padding' without
+   this reset taking priority??? */
+ul,
+ol {
   list-style: none;
 }
 
@@ -128,6 +127,7 @@ header {
   border: 1px solid blue;
   padding: 3.5rem 1.5rem 0;
   background: linear-gradient(to bottom, #ff8f71, #ff3e55);
+  border-bottom-left-radius: 6.25rem;
 }
 
 .navbar {
@@ -135,65 +135,57 @@ header {
 }
 .navbar--toggle {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .menu {
-  justify-self: end;
-  width: 100%;
   max-width: 20.25rem;
-  border-radius: 5px;
+  width: 100%;
+  justify-self: flex-end;
   position: relative;
   top: 1.5rem;
-  background: white;
-}
-.menu .item > a:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
-}
-.menu .item a,
-.menu .subitem a {
-  display: block;
-  padding: 1rem;
-}
-.menu .submenu {
-  display: none;
-  background: #0003;
   border-radius: 5px;
-  margin: 0 1.5rem;
+  background: white;
+  padding: 1.5rem;
 }
-.menu .subitem a:hover {
-  background: #0003;
+
+.item a:hover,
+.item a:focus {
+  cursor: pointer;
 }
-.menu .register {
-  border-top: 1px solid #000;
+
+.submenu {
+  display: grid;
+  grid-gap: 12px;
+  margin: 0;
+  padding: 1rem 0;
+  background: var(--grayishBlue);
+  border-radius: 5px;
+}
+
+.register {
+  padding: 0;
+  border-top: 2px solid var(--grayishBlue);
 }
 
 @media (min-width: 50em) {
+  .hamburger {
+    display: none;
+  }
+
   .navbar {
+    outline: 1px solid white;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
   }
 
-  .menu,
-.register {
-    background: none;
+  .menu {
+    margin: 0;
+    padding: 0;
+    top: 0;
     display: flex;
-  }
-
-  .menu > .register {
-    border: none;
-  }
-
-  .toggle {
-    display: none;
-  }
-
-  .submenu {
-    display: none;
   }
 }
 

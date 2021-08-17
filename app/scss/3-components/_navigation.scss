@@ -1,79 +1,82 @@
 .navbar {
+
     display: grid;
 
-
-    // place 'logo' and 'hamburger' on same line
     &--toggle {
         display: flex;
-        align-items: center;
+
         justify-content: space-between;
+        align-items: center;
     }
 }
 
+
 .menu {
-    justify-self: end;
-
-    width: 100%;
+    // Sets max-width of 'mobile menu'
     max-width: 20.25rem;
+    width: 100%;
 
-    border-radius: 5px;
+    // places 'mobile/tablet menu' to right side of screen
+    justify-self: flex-end;
 
+    // add padding below mobile menu icons
     position: relative;
     top: 1.5rem;
 
+
+    border-radius: 5px;
     background: white;
 
-    .item > a:hover {
-        cursor: pointer;
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
-        text-underline-offset: 5px;
-    }
-
-    .item a,
-    .subitem a {
-        display: block;
-        padding: 1rem;
-    }
-
-    .submenu {
-        display: none;
-        background: #0003;
-        border-radius: 5px;
-        margin: 0 1.5rem;
-    }
-
-    .subitem a:hover {
-        background: #0003;
-    }
-
-    .register {
-        border-top: 1px solid #000;
-    }
+    padding: 1.5rem;    
 }
 
+.item a:hover,
+.item a:focus {
+    cursor: pointer;
+}
+
+.submenu {
+    // display: none;
+
+    display: grid;
+    grid-gap: 12px;
+
+    margin: 0;
+    padding: 1rem 0;
+
+    background: var(--grayishBlue);
+    border-radius: 5px;
+
+    
+}
+
+.register {
+    padding: 0;
+    border-top: 2px solid var(--grayishBlue);
+}
+
+
+// 'desktop' version
 @media (min-width: 50em) {
 
+    .hamburger {
+        display: none;
+    }
+
     .navbar {
+        outline: 1px solid white;
+
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        justify-content: space-between;
     }
 
-    .menu,
-    .register {
-        background: none;
+    .menu {
+        // reset base styles for 'desktop' use
+        margin: 0;
+        padding: 0;
+        top: 0;
+
         display: flex;
-    }
-
-    .menu > .register {
-        border: none;
-    }
-
-    .toggle {
-        display: none;
-    }   
-
-    .submenu {
-        display: none;
     }
 }
