@@ -7,5 +7,7 @@ function toggleMenu() {
         menu.classList.remove("active");
 
 
-    } 
+    } else {
+        menu.classList.add("active");
+    }
 }
