@@ -124,6 +124,7 @@ nav .login {
 
 header {
   width: 100vw;
+  max-width: 100%;
   border: 1px solid blue;
   padding: 3.5rem 1.5rem 0;
   background: linear-gradient(to bottom, #ff8f71, #ff3e55);
@@ -131,42 +132,46 @@ header {
 }
 
 .navbar {
+  max-width: 68.75em;
+  margin: 0 auto;
   display: grid;
 }
 .navbar--toggle {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+}
+
+.menu,
+.submenu {
+  padding: 0;
+  margin: 0;
 }
 
 .menu {
-  max-width: 20.25rem;
-  width: 100%;
-  justify-self: flex-end;
+  max-width: 100%;
+  width: 20.25rem;
+  padding: 0 1.5rem 2rem;
   position: relative;
   top: 1.5rem;
-  border-radius: 5px;
+  justify-self: flex-end;
   background: white;
-  padding: 1.5rem;
+  border-radius: 5px;
 }
-
-.item a:hover,
-.item a:focus {
-  cursor: pointer;
+.menu > .item > a {
+  display: inline-block;
+  margin: 1.5rem 0;
 }
 
 .submenu {
   display: grid;
-  grid-gap: 12px;
-  margin: 0;
-  padding: 1rem 0;
-  background: var(--grayishBlue);
+  background: #0003;
   border-radius: 5px;
+  padding: 1rem 0 1.5rem;
 }
-
-.register {
-  padding: 0;
-  border-top: 2px solid var(--grayishBlue);
+.submenu:not(:first-child) a {
+  display: block;
+  margin-top: 0.75rem;
 }
 
 @media (min-width: 50em) {
@@ -174,18 +179,37 @@ header {
     display: none;
   }
 
-  .navbar {
-    outline: 1px solid white;
+  .navbar,
+.menu {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    width: 100%;
+    padding-right: 4rem;
   }
 
   .menu {
-    margin: 0;
+    width: 100%;
     padding: 0;
+    background: none;
     top: 0;
-    display: flex;
+  }
+  .menu > .item > a {
+    margin: 0 2rem 0 0;
+  }
+  .menu .login {
+    margin-left: auto;
+  }
+
+  .submenu {
+    display: none;
+    text-align: left;
+    position: absolute;
+    top: 1.5rem;
+    background: white;
+    padding: 1.5rem;
   }
 }
 
